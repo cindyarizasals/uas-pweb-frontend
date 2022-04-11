@@ -17,7 +17,10 @@
             Home
           </RouterLink>
           <RouterLink class="navbar-item" to="/quran">
-            Qur'an
+            Random ayat
+          </RouterLink>
+          <RouterLink class="navbar-item" to="/annas">
+            Surah An-Nas
           </RouterLink>
           <RouterLink class="navbar-item" to="/about">
             About

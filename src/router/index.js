@@ -2,6 +2,7 @@ import {createRouter, createWebHistory} from "vue-router";
 import IndexView from '../views/IndexView.vue';
 import AboutView from "../views/AboutView.vue";
 import QuranView from "../views/QuranView.vue";
+import AnnasView from "../views/AnnasView.vue";
 
 const DEFAULT_TITLE = 'Kuliah Web 2022 by Pizaini';
 const routes = [
@@ -27,6 +28,14 @@ const routes = [
         component: QuranView,
         meta: {
             title: 'Qur\'an'
+        }
+    },
+    {
+        path: '/annas',
+        name: 'annas',
+        component: AnnasView,
+        meta: {
+            title: 'Surah Annas'
         }
     }
 ]

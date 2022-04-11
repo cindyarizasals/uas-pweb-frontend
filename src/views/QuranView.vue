@@ -10,16 +10,18 @@
     </div>
   </section>
   <section class="content">
-    <div v-if="chapter && verse && quran && translation">
-      <h2 class="has-text-right">{{chapter.name_arabic}} {{verse.verse_number}}</h2>
-      <p class="has-text-right">
+    <div>
+      <h2 v-if="chapter" class="has-text-right">{{chapter.name_arabic}} {{verse.verse_number}}</h2>
+      <p v-if="audio" class="has-text-right">
         <audio controls>
           <source :src=audio type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
       </p>
-      <h3 class="has-text-right">{{quran.text_uthmani}}</h3>
-      <p>{{translation.text}}</p>
+      <h3 v-if="quran" class="has-text-right">{{quran.text_uthmani}}</h3>
+      <p v-if="translation">{{translation.text}}</p>
+      <h3>Tafsir</h3>
+      <p v-if="tafsir">{{tafsir}}</p>
     </div>
   </section>
 </template>
@@ -86,6 +88,10 @@ export default {
           .then(res => {
             this.translation = res.translations[0]
           })
+    },
+
+    async getTafsir(){
+
     },
 
     async fetchQuran(path){
