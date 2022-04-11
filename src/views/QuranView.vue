@@ -18,10 +18,11 @@
           Your browser does not support the audio element.
         </audio>
       </p>
-      <h3 v-if="quran" class="has-text-right">{{quran.text_uthmani}}</h3>
+      <h3 v-if="quran" class="has-text-right quran">{{quran.text_uthmani}}</h3>
       <p v-if="translation">{{translation.text}}</p>
-      <h3>Tafsir</h3>
-      <p v-if="tafsir">{{tafsir}}</p>
+    </div>
+    <div class="has-text-centered" v-if="isLoading">
+      <i class="fa-solid fa-spinner fa-pulse"></i>
     </div>
   </section>
 </template>
@@ -126,5 +127,5 @@ export default {
 </script>
 
 <style scoped>
-
+@import "/src/css/app.css";
 </style>
