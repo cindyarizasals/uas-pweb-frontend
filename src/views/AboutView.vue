@@ -1,5 +1,14 @@
 <template>
-  <h1>This is about page</h1>
+  <section class="hero is-small">
+    <div class="hero-body">
+      <p class="title">
+        About
+      </p>
+      <p class="subtitle">
+        Small subtitle
+      </p>
+    </div>
+  </section>
 </template>
 
 <script>
