@@ -54,7 +54,7 @@ export default {
         var2: this.b
       };
 
-      fetch(`http://backend-api.localhost/api.php`,{
+      fetch(`https://kuliahweb.riaudevops.id/aritmatika/api-post.php`,{
         method: 'POST',
         body: JSON.stringify(payload),
       })
