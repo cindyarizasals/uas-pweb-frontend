@@ -49,8 +49,14 @@ export default {
   },
   methods:{
     hitung(){
-      fetch(`backend-api.localhost/api.php?var1=${this.a}&var2=${this.b}`,{
-        method: 'GET',
+      const payload = {
+        var1: this.a,
+        var2: this.b
+      };
+
+      fetch(`http://backend-api.localhost/api.php`,{
+        method: 'POST',
+        body: JSON.stringify(payload),
       })
           .then(response => {
             if(response.ok){
@@ -58,7 +64,7 @@ export default {
             }
           })
           .then(json => {
-            this.hasil = json.hasil;
+            this.hasil = json.perkalian.hasil;
           })
           .catch(()=>{
             alert('Terjadi error')
