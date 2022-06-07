@@ -22,6 +22,9 @@
           <RouterLink class="navbar-item" to="/annas">
             Surah An-Nas
           </RouterLink>
+          <RouterLink class="navbar-item" to="/aritmatika">
+            Aritmatika
+          </RouterLink>
           <RouterLink class="navbar-item" to="/about">
             About
           </RouterLink>

@@ -2,39 +2,38 @@
   <section class="hero is-small">
     <div class="hero-body">
       <p class="title">
-        Surah An-Nass
+        Surah Annas
       </p>
       <p class="subtitle">
-        Surah An-Nass
+        Dari api.quran.com
       </p>
     </div>
   </section>
+
   <section>
-    <h1 class="has-text-right" v-if="chapter">{{chapter.name_arabic}}
-      <br>{{chapter.verses_count}} Ayat</h1>
+    <h3 class="has-text-right" v-if="chapter">{{chapter.name_arabic}} {{chapter.verses_count}}</h3>
     <hr>
     <div v-for="verse in verses">
-      <p class="has-text-right quran">
-        {{verse.text_uthmani}} {{verse.verse_key}}
-      </p>
+      <p class="has-text-right">{{verse.text_uthmani}} {{verse.verse_key}}</p>
       <hr>
     </div>
+    <p>terjemahan</p>
   </section>
 </template>
 
 <script>
 export default {
-  name: "AnnasView",
+  name: 'AnnasView',
   data(){
     return{
       chapter: null,
-      verses: [],
+      verses: []
     }
   },
-  methods: {
-    async getChapter(){
+  methods:{
+    getChapter(){
       fetch('https://api.quran.com/api/v4/chapters/114?language=id',{
-        method: 'GET'
+        method: 'GET',
       })
       .then(response => {
         if(response.ok){
@@ -45,17 +44,17 @@ export default {
         this.chapter = json.chapter;
       })
     },
-    async getVerses(){
-      fetch('https://api.quran.com/api/v4/quran/verses/uthmani?chapter_number=114', {
-        method: 'GET'
+    getVerses(){
+      fetch('https://api.quran.com/api/v4/quran/verses/uthmani?chapter_number=114',{
+        method:'GET'
       })
-      .then(res =>{
-        if(res.ok){
-          return res.json()
+      .then(resp => {
+        if(resp.ok){
+          return resp.json()
         }
       })
       .then(json => {
-        this.verses = json.verses;
+        this.verses = json.verses
       })
     }
   },
@@ -67,5 +66,4 @@ export default {
 </script>
 
 <style scoped>
-@import "/src/css/app.css";
 </style>

@@ -3,6 +3,7 @@ import IndexView from '../views/IndexView.vue';
 import AboutView from "../views/AboutView.vue";
 import QuranView from "../views/QuranView.vue";
 import AnnasView from "../views/AnnasView.vue";
+import Aritmatika from "../views/backend/Aritmatika.vue";
 
 const DEFAULT_TITLE = 'Kuliah Web 2022 by Pizaini';
 const routes = [
@@ -37,7 +38,15 @@ const routes = [
         meta: {
             title: 'Surah Annas'
         }
-    }
+    },
+    {
+        path: '/aritmatika',
+        name: 'aritmatika',
+        component: Aritmatika,
+        meta: {
+            title: 'Aritmatika'
+        }
+    },
 ]
 
 const router = createRouter({
