@@ -2,10 +2,10 @@
   <section class="hero is-small">
     <div class="hero-body">
       <p class="title">
-        About
+        Detail buku
       </p>
       <p class="subtitle">
-        This is about page
+        Menampilkan daftar rincian buku berdasarkan ISBN
       </p>
     </div>
   </section>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: "AboutView"
+  name: "BukuDetailView"
 }
 </script>
 

@@ -2,10 +2,10 @@
   <section class="hero is-small">
     <div class="hero-body">
       <p class="title">
-        Aritmatika
+        Aritmatika dengan HTTP GET Method
       </p>
       <p class="subtitle">
-        Aritmatika sederhana ke API localhost
+        Aritmatika sederhana ke API https://kuliahweb.riaudevops.id menggunakan HTTP GET. API endpoint berada pada domain yang berbeda. Pada aplikasi backend, harus diaktifkan CORS (Cross-Origin Resource Sharing)
       </p>
     </div>
   </section>
@@ -39,7 +39,7 @@
 
 <script>
 export default {
-  name: "Aritmatika",
+  name: "AritmatikaGet",
   data(){
     return{
       a: 0,
@@ -49,14 +49,16 @@ export default {
   },
   methods:{
     hitung(){
+      /* Data yang akan dikirim */
       const payload = {
         var1: this.a,
         var2: this.b
       };
-
-      fetch(`https://kuliahweb.riaudevops.id/aritmatika/api-post.php`,{
-        method: 'POST',
-        body: JSON.stringify(payload),
+      /* Convert ke query params URL */
+      const queryParams = new URLSearchParams(payload).toString();
+      const baseurl = import.meta.env.VITE_URL_ENDPOINT_2;
+      fetch(`${baseurl}/aritmatika/api-get?${queryParams}`,{
+        method: 'GET',
       })
           .then(response => {
             if(response.ok){

@@ -2,10 +2,10 @@
   <section class="hero is-small">
     <div class="hero-body">
       <p class="title">
-        About
+        Buku
       </p>
       <p class="subtitle">
-        This is about page
+        Menampilkan daftar buku, tambah data, edit dan delete. API endpoint https://kuliahweb.riaudevops.id/buku/
       </p>
     </div>
   </section>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: "AboutView"
+  name: "BukuListView"
 }
 </script>
 

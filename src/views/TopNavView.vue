@@ -16,15 +16,38 @@
           <RouterLink class="navbar-item" to="/">
             Home
           </RouterLink>
-          <RouterLink class="navbar-item" to="/quran">
-            Random ayat
-          </RouterLink>
-          <RouterLink class="navbar-item" to="/annas">
-            Surah An-Nas
-          </RouterLink>
-          <RouterLink class="navbar-item" to="/aritmatika">
-            Aritmatika
-          </RouterLink>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Qur'an API
+            </a>
+            <div class="navbar-dropdown">
+              <RouterLink class="navbar-item" to="/quran">
+                Random ayat
+              </RouterLink>
+              <RouterLink class="navbar-item" to="/annas">
+                Surah An-Nas
+              </RouterLink>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Backend API
+            </a>
+            <div class="navbar-dropdown">
+              <RouterLink class="navbar-item" to="/aritmatika-get">
+                Aritmatika GET
+              </RouterLink>
+              <RouterLink class="navbar-item" to="/aritmatika-post">
+                Aritmatika POST
+              </RouterLink>
+              <RouterLink class="navbar-item" to="/buku">
+                Buku
+              </RouterLink>
+              <RouterLink class="navbar-item" to="/kategori">
+                Kategori
+              </RouterLink>
+            </div>
+          </div>
           <RouterLink class="navbar-item" to="/about">
             About
           </RouterLink>
