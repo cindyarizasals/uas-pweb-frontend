@@ -78,9 +78,9 @@
       <section class="modal-card-body">
         <div v-if="selectedIndex > -1">
           <ul>
-            <li>ID {{data[selectedIndex].id}}</li>
-            <li>NAMA {{data[selectedIndex].nama}}</li>
-            <li>Created at {{data[selectedIndex].created_at}}</li>
+            <li>ID <strong>{{data[selectedIndex].id}}</strong></li>
+            <li>NAMA <strong>{{data[selectedIndex].nama}}</strong></li>
+            <li>Created at <strong>{{data[selectedIndex].created_at}}</strong></li>
           </ul>
         </div>
       </section>
@@ -100,9 +100,9 @@
         <div v-if="selectedIndex > -1">
           <form @submit.prevent="update">
             <div class="field">
-              <label class="label">Nama kategori</label>
+              <label class="label" for="nama_update">Nama kategori</label>
               <div class="control">
-                <input class="input" type="text" placeholder="Nama kategori" required v-model="formEdit.nama">
+                <input id="nama_update" class="input" type="text" placeholder="Nama kategori" required v-model="formEdit.nama">
               </div>
             </div>
           </form>
@@ -123,9 +123,9 @@
       <section class="modal-card-body">
         <form @submit.prevent="addNew">
           <div class="field">
-            <label class="label">Nama kategori</label>
+            <label class="label" for="nama_add">Nama kategori</label>
             <div class="control">
-              <input class="input" type="text" placeholder="Nama kategori" required v-model="formAdd.nama">
+              <input id="nama_add" class="input" type="text" placeholder="Nama kategori" required v-model="formAdd.nama">
             </div>
           </div>
         </form>
@@ -139,6 +139,8 @@
 </template>
 
 <script>
+import {nextTick} from "vue";
+
 export default {
   name: "KategoriListView",
   data(){
@@ -236,8 +238,7 @@ export default {
               if(!json.status){
                 alert(json.error);
               }else{
-                this.data[this.selectedIndex].id = this.formEdit.id;
-                this.data[this.selectedIndex].nama = this.formEdit.nama;
+                this.data[this.selectedIndex] = json.data;
               }
             })
             .catch( (e) =>{
@@ -258,9 +259,15 @@ export default {
       const selectedData = this.data[index];
       this.formEdit.id = selectedData.id;
       this.formEdit.nama = selectedData.nama;
+      nextTick(()=>{
+        document.getElementById('nama_update').focus();
+      })
     },
     showAdd(){
       this.showModal('modal-add');
+      nextTick(()=>{
+        document.getElementById('nama_add').focus();
+      })
     },
     addNew(){
       this.closeModal('modal-add');

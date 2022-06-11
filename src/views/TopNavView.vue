@@ -3,7 +3,7 @@
     <div class="container">
       <div class="navbar-brand">
         <RouterLink class="navbar-item" to="/">
-          <img src="/images/logo.png" alt="Logo">
+          <img src="/images/logo.png" alt="Logo"> Kuliah web
         </RouterLink>
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
           <span aria-hidden="true"></span>

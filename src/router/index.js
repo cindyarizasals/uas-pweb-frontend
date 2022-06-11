@@ -8,6 +8,7 @@ import AritmatikaPost from "../views/aritmatika/AritmatikaPost.vue";
 import BukuDetailView from "../views/buku/BukuDetailView.vue";
 import BukuListView from "../views/buku/BukuListView.vue";
 import KategoriListView from "../views/kategori/KategoriListView.vue";
+import Error404View from "../views/error/Error404View.vue";
 
 const DEFAULT_TITLE = 'Kuliah Web 2022 by Pizaini';
 const routes = [
@@ -68,7 +69,7 @@ const routes = [
         }
     },
     {
-        path: '/buku-detail',
+        path: '/buku/:isbn',
         name: 'buku-detail',
         component: BukuDetailView,
         meta: {
@@ -81,6 +82,14 @@ const routes = [
         component: KategoriListView,
         meta: {
             title: 'Kategori'
+        }
+    },
+    {
+        path: '/:pathMatch(.*)*',
+        name: 'Error404',
+        component: Error404View,
+        meta: {
+            title: 'Error 404'
         }
     },
 ]
