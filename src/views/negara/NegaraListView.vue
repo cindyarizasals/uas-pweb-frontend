@@ -1,8 +1,8 @@
 <template>
   <section class="hero is-small">
     <div class="hero-body">
-      <p class="title">Genre Film</p>
-      <p class="subtitle">Menampilkan daftar genre film, tambah, edit, dan delete data genre film.</p>
+      <p class="title">Negara Asal Film</p>
+      <p class="subtitle">Menampilkan daftar negara asal film, tambah, edit dan delete data negara asal film.</p>
     </div>
   </section>
 
@@ -12,14 +12,14 @@
         <span class="icon is-small">
           <i class="fas fa-plus"></i>
         </span>
-        <span>Tambah Genre</span>
+        <span>Tambah Negara</span>
       </button>
       <table class="table">
         <thead>
           <tr>
             <th>#</th>
             <th>ID</th>
-            <th>Nama ketegori</th>
+            <th>Nama Negara</th>
             <th>Created at</th>
             <th>#</th>
           </tr>
@@ -100,9 +100,9 @@
         <div v-if="selectedIndex > -1">
           <form @submit.prevent="update">
             <div class="field">
-              <label class="label" for="nama_update">Nama kategori</label>
+              <label class="label" for="nama_update">Nama Negara</label>
               <div class="control">
-                <input id="nama_update" class="input" type="text" placeholder="Nama kategori" required v-model="formEdit.nama" />
+                <input id="nama_update" class="input" type="text" placeholder="Nama Negara" required v-model="formEdit.nama" />
               </div>
             </div>
           </form>
@@ -123,9 +123,9 @@
       <section class="modal-card-body">
         <form @submit.prevent="addNew">
           <div class="field">
-            <label class="label" for="nama_add">Nama kategori</label>
+            <label class="label" for="nama_add">Nama Negara</label>
             <div class="control">
-              <input id="nama_add" class="input" type="text" placeholder="Nama kategori" required v-model="formAdd.nama" />
+              <input id="nama_add" class="input" type="text" placeholder="Nama Negara" required v-model="formAdd.nama" />
             </div>
           </div>
         </form>
@@ -142,7 +142,7 @@
 import { nextTick } from "vue";
 
 export default {
-  name: "KategoriListView",
+  name: "NegaraListView",
   data() {
     return {
       data: [],
@@ -161,7 +161,7 @@ export default {
     load() {
       this.isLoading = true;
       const baseurl = import.meta.env.VITE_URL_ENDPOINT_2;
-      fetch(`${baseurl}/kategori`, {
+      fetch(`${baseurl}/negara`, {
         method: "GET",
       })
         .then((response) => {
@@ -189,7 +189,7 @@ export default {
           id: selectedData.id,
         });
 
-        fetch(`${baseurl}/kategori/delete`, {
+        fetch(`${baseurl}/negara/delete`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
@@ -223,7 +223,7 @@ export default {
           id: this.formEdit.id,
         });
 
-        fetch(`${baseurl}/kategori/update`, {
+        fetch(`${baseurl}/negara/update`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
@@ -276,7 +276,7 @@ export default {
         nama: this.formAdd.nama,
       });
 
-      fetch(`${baseurl}/kategori/create`, {
+      fetch(`${baseurl}/negara/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",

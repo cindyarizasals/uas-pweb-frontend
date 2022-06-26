@@ -1,14 +1,7 @@
 <template>
   <footer class="footer">
     <div class="content has-text-centered">
-      <p>
-        <strong>Kuliah Pemrograman Web</strong> by <a href="https://github.com/pizaini/kuliah-web-2022">Pizaini</a>
-        &copy; {{year}}
-      </p>
-      <p>
-        <img src="https://bulma.io/images/made-with-bulma.png" alt="made with bulma" width="120" class="mr-3">
-        <img src="https://docs.vuejs.id/images/logo.png" alt="made with vuejs" width="22">
-      </p>
+      <p><strong>Tugas UAS Pemrograman Web</strong> oleh <a>Cindy Ariza Salsabilla dan Dwitya Maudy Alfira</a> &copy; {{ year }}</p>
     </div>
   </footer>
 </template>
@@ -18,12 +11,10 @@ export default {
   name: "FooterView",
   data() {
     return {
-      year: new Date().getFullYear()
-    }
-  }
-}
+      year: new Date().getFullYear(),
+    };
+  },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
