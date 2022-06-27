@@ -1,7 +1,7 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" style="background-color: #e2d7d4">
     <div class="content has-text-centered">
-      <p><strong>Tugas UAS Pemrograman Web</strong> oleh <a>Cindy Ariza Salsabilla dan Dwitya Maudy Alfira</a> &copy; {{ year }}</p>
+      <p><strong>Tugas UAS Pemrograman Web</strong> oleh <strong>Cindy Ariza Salsabilla dan Dwitya Maudy Alfira</strong> &copy; {{ year }}</p>
     </div>
   </footer>
 </template>

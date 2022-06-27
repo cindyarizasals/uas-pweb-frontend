@@ -6,7 +6,7 @@ import KategoriListView from "../views/kategori/KategoriListView.vue";
 import NegaraListView from "../views/negara/NegaraListView.vue";
 import Error404View from "../views/error/Error404View.vue";
 
-const DEFAULT_TITLE = "Kuliah Web 2022 by Pizaini";
+const DEFAULT_TITLE = "Film App by Cindy dan Dwitya";
 const routes = [
   {
     path: "/",

@@ -1,8 +1,8 @@
 <template>
-  <nav class="navbar">
+  <nav class="navbar" style="background-color: #e2d7d4">
     <div class="container">
       <div class="navbar-brand">
-        <RouterLink class="navbar-item" to="/"> <img src="/images/logo.png" alt="Logo" /> Tugas UAS </RouterLink>
+        <RouterLink class="navbar-item" to="/"> <img src="/images/logoweb.png" alt="Logo" /> Tugas UAS </RouterLink>
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>

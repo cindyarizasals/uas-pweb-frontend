@@ -1,5 +1,5 @@
 <template>
-  <section class="semua" style="background-color: #e1ba9d">
+  <section class="semua">
     <section class="page-section" id="team">
       <div class="container">
         <div class="text-center">
@@ -62,7 +62,7 @@ export default {
   font-family: "Segoe UI";
   font-weight: bold;
   font-size: 40px;
-  color: white;
+  color: #db825b;
 }
 .section-subheading {
   font-family: "Segoe UI";
